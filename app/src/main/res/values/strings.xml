@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">HSE Timetable</string>
+    <string name="title_activity_demo">DemoActivity</string>
+    <string name="timetable_for_students">Расписание для студентов</string>
+    <string name="timetable_for_teachers">Расписание для преподавателей</string>
+
+
+    <!--  TeacherActivity -->
+    <string name="title_activity_student">StudentActivity</string>
+    <string name="select_teacher_text">Выберите преподавателя</string>
+    <string name="time_now">Сейчас: </string>
+    <string name="status">Идёт пара / Нет пар</string>
+    <string name="title_disciple">Дисциплина</string>
+    <string name="title_room">Кабинет</string>
+    <string name="title_building">Корпус</string>
+    <string name="title_teacher">Преподаватель</string>
+
+    <string name="btn_timetable_for_day">Расписание на день</string>
+    <string name="btn_timetable_for_week">Расписание на неделю</string>
+
+    <!--  StudentActivity -->
+    <string name="select_group_text">Выберите группу</string>
+
+    <string-array name="available_teachers">
+        <item>Яборов А.В</item>
+        <item>Марквирер В.Д</item>
+    </string-array>
+
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="title_activity_teacher">TeacherActivity</string>
+</resources>

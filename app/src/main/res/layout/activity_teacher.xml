@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/inner_padding"
+    android:orientation="vertical"
+    tools:context=".TeacherActivity">
+
+    <TextView
+        style="@style/myTextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/select_teacher_text"/>
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/grouplist"/>
+
+    <LinearLayout
+        android:layout_marginBottom="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            style="@style/myTextViewStyle"
+            android:layout_height="wrap_content"
+            android:text="@string/time_now"/>
+
+        <TextView
+            style="@style/myTextViewStyle"
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        style="@style/myTextViewStyle"
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/status"/>
+
+    <TextView
+        style="@style/myTextViewStyle"
+        android:id="@+id/subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_disciple"/>
+
+
+    <TextView
+        style="@style/myTextViewStyle"
+        android:id="@+id/cabinet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_room"/>
+
+
+    <TextView
+        style="@style/myTextViewStyle"
+        android:id="@+id/corp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_building"/>
+
+
+    <TextView
+        style="@style/myTextViewStyle"
+        android:id="@+id/teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_teacher"/>
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:lines="2"
+            android:singleLine="false"
+            android:id="@+id/btn_day"
+            android:text="@string/btn_timetable_for_day"/>
+
+        <Button
+            android:layout_weight="1"
+            android:lines="2"
+            android:layout_marginRight="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            android:id="@+id/btn_week"
+            android:text="@string/btn_timetable_for_week"/>
+    </LinearLayout>
+
+
+</LinearLayout>
