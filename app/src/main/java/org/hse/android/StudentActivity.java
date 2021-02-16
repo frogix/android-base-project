@@ -1,5 +1,6 @@
 package org.hse.android;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -59,6 +60,22 @@ public class StudentActivity extends AppCompatActivity {
         initData();
     }
 
+    private String capitalizeCyrillic(String str) {
+        String firstChar = str.substring(0, 1);
+        String restPart = str.substring(1);
+
+        String lowerCaseAlphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+        String upperCaseAlphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
+
+        int firstCharIndex = lowerCaseAlphabet.indexOf(firstChar);
+        if (firstCharIndex == -1) {
+            return str;
+        }
+
+        return upperCaseAlphabet.charAt(firstCharIndex) + restPart;
+    }
+
+    @SuppressLint("SetTextI18n")
     private void initTime() {
         currentTime = new Date();
 
@@ -66,14 +83,13 @@ public class StudentActivity extends AppCompatActivity {
         Locale loc = new Locale("ru", "RU");
 
         // Format string
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm, EEEE", loc);
-        String str = simpleDateFormat.format(currentTime);
+        SimpleDateFormat timeHoursPattern = new SimpleDateFormat("HH:mm", loc);
+        SimpleDateFormat weekDayPattern = new SimpleDateFormat("EEEE", loc);
 
-        // Capitalize the word
-        str = str.substring(0,1).toUpperCase() + str.substring(1);
+        String hoursMinutes = timeHoursPattern.format(currentTime);
+        String weekDay = capitalizeCyrillic(weekDayPattern.format(currentTime));
 
-        time.setText(str);
-
+        time.setText(hoursMinutes + ", " + weekDay);
     }
 
     private void initData() {

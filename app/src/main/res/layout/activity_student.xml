@@ -82,18 +82,18 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="5dp"
             android:lines="2"
+            android:layout_weight="1"
+            android:layout_marginEnd="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/btn_day"
-            android:text="@string/btn_timetable_for_day"/>
+            android:text="@string/btn_timetable_for_day" />
 
         <Button
-            android:layout_weight="1"
             android:lines="2"
-            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btn_week"
