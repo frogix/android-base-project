@@ -6,7 +6,7 @@
 
 
     <!--  TeacherActivity -->
-    <string name="title_activity_student">Расписение для студентов</string>
+    <string name="title_activity_student">Расписание для студентов</string>
     <string name="select_teacher_text">Выберите преподавателя</string>
     <string name="time_now">Сейчас: </string>
     <string name="status">Идёт пара / Нет пар</string>
@@ -32,4 +32,14 @@
     -->
     <string name="hello_world">Hello Square World!</string>
     <string name="title_activity_teacher">Расписание для учителей</string>
+    <string name="hse_logo_description">HSE Logo</string>
+    <string name="settings_text">Настройки</string>
+    <string name="select_avatar">Укажите фото:</string>
+    <string name="take_photo">Сделать фото</string>
+    <string name="type_name">Укажите ваше имя</string>
+    <string name="settings">Настройки</string>
+    <string name="save">Сохранить</string>
+    <string name="title_activity_schedule">ScheduleActivity</string>
+    <string name="default_title">Расписание</string>
+    <string name="default_class_type">Лекция</string>
 </resources>

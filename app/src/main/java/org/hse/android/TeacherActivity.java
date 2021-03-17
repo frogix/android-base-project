@@ -8,15 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
-public class TeacherActivity extends AppCompatActivity {
+public class TeacherActivity extends BaseActivity {
     private TextView time, status, subject, cabinet, corp, teacher;
     private Date currentTime;
 
@@ -49,13 +45,19 @@ public class TeacherActivity extends AppCompatActivity {
         });
 
         time = findViewById(R.id.time);
-        initTime();
+        getTime();
 
         status = findViewById(R.id.status);
         subject = findViewById(R.id.subject);
         cabinet = findViewById(R.id.cabinet);
-        corp = findViewById(R.id.corp);
+        corp = findViewById(R.id.building);
         teacher = findViewById(R.id.teacher);
+
+
+        View scheduleDay = findViewById(R.id.btn_day);
+        scheduleDay.setOnClickListener(v -> showSchedule(BaseActivity.ScheduleType.DAY, ScheduleMode.TEACHER, spinner));
+        View scheduleWeek = findViewById(R.id.btn_week);
+        scheduleWeek.setOnClickListener(v -> showSchedule(BaseActivity.ScheduleType.WEEK, ScheduleMode.TEACHER, spinner));
 
         initData();
 
@@ -81,22 +83,6 @@ public class TeacherActivity extends AppCompatActivity {
         }
     }
 
-    private void initTime() {
-        currentTime = new Date();
-
-        // Get russian locale
-        Locale loc = new Locale("ru", "RU");
-
-        // Format string
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm, EEEE", loc);
-        String str = simpleDateFormat.format(currentTime);
-
-        // Capitalize the word
-        str = str.substring(0,1).toUpperCase() + str.substring(1);
-
-        time.setText(str);
-
-    }
 
     private void initData() {
         status.setText("Нет пар");

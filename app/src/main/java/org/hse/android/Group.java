@@ -11,13 +11,12 @@ public class Group {
 
     }
 
-    public Integer getld() {
+    public Integer getId() {
         return id;
     }
 
-    public void setld(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
-
     }
 
     @Override

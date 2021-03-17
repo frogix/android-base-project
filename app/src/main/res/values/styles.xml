@@ -4,4 +4,16 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
+
+    <style name="captionStyle">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">16pt</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="timetableEntryTitle">
+        <item name="android:textColor">@color/colorSecondary</item>
+        <item name="android:textSize">14pt</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

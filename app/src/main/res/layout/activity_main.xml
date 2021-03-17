@@ -7,28 +7,32 @@
     android:gravity="center_horizontal"
     tools:context=".MainActivity">
 
-
     <ImageView
         android:layout_width="fill_parent"
         android:layout_height="200dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/hse_logo" />
+        android:src="@drawable/hse_logo"
+        android:contentDescription="@string/hse_logo_description" />
 
     <Button
         android:id="@+id/student_timetable_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/timetable_for_students"
-        android:textAllCaps="true"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="75dp"/>
 
     <Button
         android:id="@+id/teacher_timetable_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/timetable_for_teachers"
-        android:textAllCaps="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="10dp"/>
 
-
+    <Button
+        android:id="@+id/settings_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_text"
+        android:backgroundTint="@color/colorPrimaryVariant"
+        android:layout_marginTop="10dp"/>
 </LinearLayout>

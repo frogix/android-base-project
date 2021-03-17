@@ -1,6 +1,5 @@
 package org.hse.android;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,15 +8,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
-public class StudentActivity extends AppCompatActivity {
+public class StudentActivity extends BaseActivity {
 
     private TextView time, status, subject, cabinet, corp, teacher;
     private Date currentTime;
@@ -49,48 +44,22 @@ public class StudentActivity extends AppCompatActivity {
         });
 
         time = findViewById(R.id.time);
-        initTime();
+        getTime();
 
         status = findViewById(R.id.status);
         subject = findViewById(R.id.subject);
         cabinet = findViewById(R.id.cabinet);
-        corp = findViewById(R.id.corp);
+        corp = findViewById(R.id.building);
         teacher = findViewById(R.id.teacher);
 
+        View scheduleDay = findViewById(R.id.btn_day);
+        scheduleDay.setOnClickListener(v -> showSchedule(ScheduleType.DAY, ScheduleMode.STUDENT, spinner));
+        View scheduleWeek = findViewById(R.id.btn_week);
+        scheduleWeek.setOnClickListener(v -> showSchedule(ScheduleType.WEEK, ScheduleMode.STUDENT, spinner));
         initData();
     }
 
-    private String capitalizeCyrillic(String str) {
-        String firstChar = str.substring(0, 1);
-        String restPart = str.substring(1);
 
-        String lowerCaseAlphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
-        String upperCaseAlphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-
-        int firstCharIndex = lowerCaseAlphabet.indexOf(firstChar);
-        if (firstCharIndex == -1) {
-            return str;
-        }
-
-        return upperCaseAlphabet.charAt(firstCharIndex) + restPart;
-    }
-
-    @SuppressLint("SetTextI18n")
-    private void initTime() {
-        currentTime = new Date();
-
-        // Get russian locale
-        Locale loc = new Locale("ru", "RU");
-
-        // Format string
-        SimpleDateFormat timeHoursPattern = new SimpleDateFormat("HH:mm", loc);
-        SimpleDateFormat weekDayPattern = new SimpleDateFormat("EEEE", loc);
-
-        String hoursMinutes = timeHoursPattern.format(currentTime);
-        String weekDay = capitalizeCyrillic(weekDayPattern.format(currentTime));
-
-        time.setText(hoursMinutes + ", " + weekDay);
-    }
 
     private void initData() {
         status.setText("Нет пар");
