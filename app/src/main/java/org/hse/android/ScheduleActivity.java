@@ -58,7 +58,8 @@ public class ScheduleActivity extends AppCompatActivity {
         currentTime = findViewById(R.id.current_time);
         currentTime.setText(simpleDateFormat.format(givenTime));
 
-        String caption = getIntent().getStringExtra(ARG_NAME);
+        TextView title = findViewById(R.id.schedule_title);
+        title.setText(getIntent().getStringExtra(ARG_NAME));
 
         recyclerView = findViewById(R.id.listView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -66,15 +67,15 @@ public class ScheduleActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         adapter = new ItemAdapter(data -> { });
-        initData(caption);
         recyclerView.setAdapter(adapter);
+        initData();
 
     }
 
-    private void initData(String caption) {
+    private void initData() {
         List<ScheduleItem> list = new ArrayList<>();
 
-        list.add(new ScheduleItemHeader(caption));
+        list.add(new ScheduleItemHeader("Понедельник, 28 января"));
 
         ScheduleItem item = new ScheduleItem();
         item.setStart("10:00");

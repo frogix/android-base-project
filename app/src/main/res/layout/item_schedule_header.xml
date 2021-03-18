@@ -9,7 +9,7 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/captionStyle"
+        style="@style/HeaderCaptionStyle"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="4dp" />
 </LinearLayout>

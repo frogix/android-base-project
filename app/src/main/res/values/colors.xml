@@ -4,4 +4,5 @@
     <color name="colorPrimaryVariant">#011F5A</color>
     <color name="colorSecondary">#4080ff</color>
     <color name="colorSecondaryVariant">#0C5DFD</color>
+    <color name="colorGray">#777777</color>
 </resources>
